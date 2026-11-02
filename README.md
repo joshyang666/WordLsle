@@ -50,7 +50,9 @@ cd WordLsle
 构建成功后，生成的 APK 位于：
 `app/build/outputs/apk/debug/app-debug.apk`
 ---
+
 🛠️ 技术栈与架构
+
 开发语言：Kotlin
 UI 框架：Jetpack Compose + Material Design 3
 架构设计：MVVM + Clean Architecture
@@ -58,14 +60,18 @@ UI 框架：Jetpack Compose + Material Design 3
 网络与分发：OkHttp (用于 GitHub Release 自动检测与下载)
 本地存储：Room Database / DataStore
 ---
+
 🔄 应用内更新工作流
 本项目通过无后端（Serverless）架构实现版本迭代：
+
 版本发布：开发者构建 Release 包并在 GitHub Releases 创建对应 Tag（如 `v1.0.1`）挂载 APK。
 版本检测：应用启动时异步读取 GitHub Latest API 获取最新版本号与更新日志。
 分发加速：客户端自动接入加速反向代理，保障国内各运营商环境秒级拉取更新包。
 安全安装：下载后基于 Android `FileProvider` 调起原生包安装器实现平滑升级。
 ---
+
 🗺️ 后续路线图 (Roadmap)
+
 [ ] 丰富内置词库（CET-4/6、考研、托福、雅思、GRE）
 [ ] 自定义导入外部 Anki / CSV / 纯文本生词本
 [ ] 单词真人发音缓存与发音语速微调
