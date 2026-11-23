@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>词屿 WordIsle</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- 左侧导航：宽屏显示图标 + 文字，窄屏收成图标栏，再窄变成底部标签 -->
+  <aside class="rail">
+    <div class="brand">
+      <div class="brand-mark">屿</div>
+      <div class="brand-text">
+        <strong>词屿</strong>
+        <span>WordIsle</span>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <button class="nav-item" data-view="home"><span class="ico" data-ico="home"></span><span class="nav-label">今日</span></button>
+      <button class="nav-item" data-view="books"><span class="ico" data-ico="books"></span><span class="nav-label">词书</span></button>
+      <button class="nav-item" data-view="browse"><span class="ico" data-ico="list"></span><span class="nav-label">词表</span></button>
+      <button class="nav-item" data-view="known"><span class="ico" data-ico="check"></span><span class="nav-label">熟词本</span></button>
+      <button class="nav-item" data-view="search"><span class="ico" data-ico="search"></span><span class="nav-label">查词</span></button>
+      <button class="nav-item" data-view="stats"><span class="ico" data-ico="chart"></span><span class="nav-label">统计</span></button>
+      <button class="nav-item" data-view="settings"><span class="ico" data-ico="gear"></span><span class="nav-label">设置</span></button>
+    </nav>
+
+    <div class="rail-foot">
+      <button class="book-chip" id="bookChip" title="切换词书">
+        <span class="book-chip-emoji" id="bookChipEmoji">📘</span>
+        <span class="book-chip-text">
+          <strong id="bookChipName">四级核心</strong>
+          <span id="bookChipSub">3812 词</span>
+        </span>
+      </button>
+      <div class="streak-chip"><span id="streakNum">0</span> 天连续</div>
+    </div>
+  </aside>
+
+  <!-- 主区 -->
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-title">
+        <h1 id="pageTitle">今日</h1>
+        <p id="pageSub">今天要复习的、要新学的，都在这儿</p>
+      </div>
+      <div class="topbar-actions" id="topActions"></div>
+    </header>
+
+    <div class="view" id="view">
+      <div class="boot">正在加载词库…</div>
+    </div>
+  </main>
+</div>
+
+<!-- 学习会话：整屏浮层 -->
+<div class="session hidden" id="session"></div>
+
+<!-- 轻提示 -->
+<div class="toast" id="toast"></div>
+
+<script src="lexicon.js"></script>
+<script src="phrases.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
